@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Российская биржа — Новостной портал</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <div class="header">Российская биржа — Новостной портал</div>
+
+        <!-- Меню -->
+        <div class="nav">
+            <a href="#">Главная</a>
+            <a href="#">Новости</a>
+            <a href="#">Объявления</a>
+            <a href="#">Фирмы</a>
+            <a href="#">Работа</a>
+            <a href="#">Блоги</a>
+            <a href="#">Форум</a>
+            <a href="#">Фото</a>
+            <a href="#">Пользователи</a>
+            <a href="#">Викторина</a>
+            <a href="#">Конкурсы</a>
+            <a href="#">Игры</a>
+        </div>
+
+        <!-- Баннер -->
+        <div class="banner">
+            <!-- Поиск -->
+            <div class="search">
+                <input type="text" placeholder="Что ищем?">
+                <button>??</button>
+            </div>
+
+            <!-- Логин -->
+            <div class="login-box">
+                <a href="#">Регистрация</a> | <a href="#">Забыли пароль?</a><br>
+                <input type="text" placeholder="Логин">
+                <input type="password" placeholder="Пароль">
+                <button>??</button>
+            </div>
+        </div>
+
+        <!-- Приветствие -->
+        <div class="welcome">
+            ?? Добро пожаловать! <a href="#">Зарегистрируйтесь</a> и Вам станут доступны все функции портала.
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+
+            <!-- Левая колонка -->
+            <div class="sidebar">
+
+                <!-- VIP объявления -->
+                <div class="sidebar-section">
+                    <h3>VIP объявления</h3>
+                    <div class="vip-alert">
+                        Нет объявлений для отображения.<br>
+                        <a href="#">Как повысить эффективность своего объявления?</a>
+                        <span class="more">все объявления »</span>
+                    </div>
+                </div>
+
+                <!-- Рубрики объявлений -->
+                <div class="sidebar-section">
+                    <h3>Рубрики объявлений</h3>
+                    <ul>
+                        <li><a href="#">Автомобили</a></li>
+                        <li><a href="#">Бытовая техника</a></li>
+                        <li><a href="#">Животные</a></li>
+                        <li><a href="#">Знакомства</a></li>
+                        <li><a href="#">Мебель</a></li>
+                        <li><a href="#">Недвижимость</a></li>
+                        <li><a href="#">Одежда, обувь</a></li>
+                        <li><a href="#">Работа</a></li>
+                        <li><a href="#">Услуги</a></li>
+                    </ul>
+                </div>
+
+                <!-- Рубрики фотогалереи -->
+                <div class="sidebar-section">
+                    <h3>Рубрики фотогалереи</h3>
+                    <ul>
+                        <li><a href="#">Автомобили</a></li>
+                        <li><a href="#">Общий альбом</a></li>
+                    </ul>
+                </div>
+
+                <!-- Новые конкурсы -->
+                <div class="sidebar-section">
+                    <h3>Новые конкурсы</h3>
+                    <img src="https://via.placeholder.com/230x100?text=Конкурс+на+фото" alt="Конкурс" style="width:100%; margin-top:5px;">
+                </div>
+
+            </div>
+
+            <!-- Центральная колонка -->
+            <div class="content">
+
+                <!-- Заголовок новостей -->
+                <div class="news-header">Новости</div>
+
+                <!-- Главная новость -->
+                <div class="featured-news">
+                    <div class="featured-image"></div>
+                    <div class="featured-text">
+                        <div class="news-item" style="background:#7f8c8d; color:white; padding:10px; margin-bottom:5px;">
+                            <img src="https://via.placeholder.com/60x60?text=Хоккей" alt="Хоккей">
+                            <div>
+                                <div class="date">16 мая 2013</div>
+                                <div class="title">Словаки победили сборную США и вышли в плей-офф ЧМ-2013</div>
+                            </div>
+                        </div>
+                        <div class="news-item" style="background:#9b59b6; color:white; padding:10px; margin-bottom:5px;">
+                            <img src="https://via.placeholder.com/60x60?text=Демченко" alt="Демченко">
+                            <div>
+                                <div class="date">16 мая 2013</div>
+                                <div class="title">Саночник Альберт Демченко испытал сочинскую трассу</div>
+                            </div>
+                        </div>
+                        <div class="news-item" style="background:#34495e; color:white; padding:10px; margin-bottom:5px;">
+                            <img src="https://via.placeholder.com/60x60?text=Футбол" alt="Футбол">
+                            <div>
+                                <div class="date">16 мая 2013</div>
+                                <div class="title">Футбол. Лига Европы. Объявлены стартовые составы</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладки -->
+                <div class="tabs">
+                    <a href="#" class="active">Новости спорта</a>
+                    <a href="#">Новости кино</a>
+                    <a href="#">Новости политики</a>
+                </div>
+
+                <!-- Новости -->
+                <div class="news-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/60x60?text=Терек" alt="Терек">
+                        <div>
+                            <div class="date">31 мая 2013</div>
+                            <div class="title">"Терек" получил нового тренера</div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/60x60?text=Спартак" alt="Спартак">
+                        <div>
+                            <div class="date">31 мая 2013</div>
+                            <div class="title">"Спартак" предлагает шесть миллионов евро за Тино Косту</div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/60x60?text=Олимпиада" alt="Олимпиада">
+                        <div>
+                            <div class="date">31 мая 2013</div>
+                            <div class="title">Покурить на Олимпиаде в Сочи не удастся</div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/60x60?text=Карлос" alt="Карлос">
+                        <div>
+                            <div class="date">31 мая 2013</div>
+                            <div class="title">Роберто Карлос договорился о контракте с турецким клубом</div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/60x60?text=Кокорин" alt="Кокорин">
+                        <div>
+                            <div class="date">31 мая 2013</div>
+                            <div class="title">
