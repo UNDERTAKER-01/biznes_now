@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Настройки</title>
+  <style>
+    /* === Базовые переменные (тёмная тема по умолчанию) === */
+    :root {
+      --bg: #0d0d0d;
+      --text: #ffffff;
+      --card-bg: #1a1a1a;
+      --border: #2d2d2d;
+      --accent: #f5a623;
+    }
+
+    /* === Светлая тема === */
+    .theme-light {
+      --bg: #f8f9fa;
+      --text: #212529;
+      --card-bg: #ffffff;
+      --border: #dee2e6;
+      --accent: #ffffff;
+    }
+
+    /* === Оранжевая тема === */
+    .theme-orange {
+      --bg: #1a120b;
+      --text: #f8f0e3;
+      --card-bg: #2b1d13;
+      --border: #4a3a2e;
+      --accent: #ff9e44;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 28px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    .setting-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    select:focus, button:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    button {
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    a.back {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Настройки</h1>
+
+    <div class="card">
+      <div class="setting-group">
+        <label id="theme-label">Тема оформления</label>
+        <select id="theme-select">
+          <option value="dark">Тёмная</option>
+          <option value="light">Светлая</option>
+          <option value="orange">Оранжевая</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label id="lang-label">Язык интерфейса</label>
+        <select id="lang-select">
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <button id="save-btn" onclick="saveAndApply()">Сохранить</button>
+    </div>
+
+    <a href="./index23.html" class="back" id="back-link">← Вернуться на главную</a>
+  </div>
+
+  <script>
+    // === Переводы ===
+    const translations = {
+      ru: {
+        title: "Настройки",
+        themeLabel: "Тема оформления",
+        langLabel: "Язык интерфейса",
+        saveBtn: "Сохранить",
+        backLink: "← Вернуться на главную",
+        alert: "Настройки сохранены!"
+      },
+      en: {
+        title: "Settings",
+        themeLabel: "Theme",
+        langLabel: "Language",
+        saveBtn: "Save",
+        backLink: "← Back to homepage",
+        alert: "Settings saved!"
+      }
+    };
+
+    // === Применение перевода ===
+    function applyLanguage(lang) {
+      document.getElementById('title').textContent = translations[lang].title;
+      document.getElementById('theme-label').textContent = translations[lang].themeLabel;
+      document.getElementById('lang-label').textContent = translations[lang].langLabel;
+      document.getElementById('save-btn').textContent = translations[lang].saveBtn;
+      document.getElementById('back-link').textContent = translations[lang].backLink;
+      document.getElementById('html-root').setAttribute('lang', lang);
+    }
+
+    // === Применение темы ===
+    function applyTheme(theme) {
+      document.body.className = ''; // сброс всех тем
+      if (theme !== 'dark') {
+        document.body.classList.add(`theme-${theme}`);
+      }
+    }
+
+    // === Сохранение и применение ===
+    function saveAndApply() {
+      const lang = document.getElementById('lang-select').value;
+      const theme = document.getElementById('theme-select').value;
+
+      localStorage.setItem('userLang', lang);
+      localStorage.setItem('userTheme', theme);
+
+      applyLanguage(lang);
+      applyTheme(theme);
+
+      alert(translations[lang].alert);
+    }
+
+    // === Загрузка при старте ===
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('userLang') || 'ru';
+      const savedTheme = localStorage.getItem('userTheme') || 'dark';
+
+      document.getElementById('lang-select').value = savedLang;
+      document.getElementById('theme-select').value = savedTheme;
+
+      applyLanguage(savedLang);
+      applyTheme(savedTheme);
+    });
+  </script>
+</body>
+</html>

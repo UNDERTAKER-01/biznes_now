@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Программа Bonus — Russian Industrial Exchange</title>
+  <style>
+    :root {
+      --bg-primary: #0d0d0d;
+      --bg-secondary: #121212;
+      --bg-tertiary: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #b3b3b3;
+      --accent: #f5a623;
+      --green: #00ff7f;
+      --border: #2d2d2d;
+    }
+
+    .theme-light {
+      --bg-primary: #f8f9fa;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f3f5;
+      --text-primary: #212529;
+      --text-secondary: #6c757d;
+      --accent: #0d6efd;
+      --green: #198754;
+      --border: #dee2e6;
+    }
+
+    .theme-orange {
+      --bg-primary: #1a120b;
+      --bg-secondary: #2b1d13;
+      --bg-tertiary: #3d2a1a;
+      --text-primary: #f8f0e3;
+      --text-secondary: #d4b89c;
+      --accent: #ff9e44;
+      --green: #6bff8a;
+      --border: #4a3a2e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 25px 0 15px;
+      color: var(--accent);
+    }
+
+    p, li {
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .levels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    .level-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .level-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .level-bonus {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--green);
+      margin: 10px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Применение сохранённой темы -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('userTheme') || 'dark';
+      if (savedTheme !== 'dark') {
+        document.body.classList.add(`theme-${savedTheme}`);
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" onclick="location.href='index.html'">Russian Industrial Exchange</div>
+      <nav>
+        <a href="./index23.html">Главная</a>
+        <a href="./index80.html">Настройки</a>
+      </nav>
+    </header>
+
+    <h1>Программа Bonus</h1>
+
+    <p>
+      Зарабатывайте бонусы за активность на нашей платформе! Чем больше вы торгуете и приглашаете друзей — тем выше ваш уровень и больше вознаграждение.
+    </p>
+
+    <h2>Как это работает?</h2>
+    <ul>
+      <li>Получайте кэшбэк до <strong>20%</strong> от комиссии за каждую сделку</li>
+      <li>Приглашайте друзей и получайте <strong>10%</strong> от их комиссии пожизненно</li>
+      <li>Поднимайтесь по уровням и открывайте эксклюзивные привилегии</li>
+    </ul>
+
+    <h2>Уровни программы</h2>
+    <div class="levels">
+      <div class="level-card">
+        <div class="level-name">Бронзовый</div>
+        <div>Объём: до 10 BTC</div>
+        <div class="level-bonus">+5% кэшбэк</div>
+      </div>
+      <div class="level-card">
+        <div class="level-name">Серебряный</div>
+        <div>Объём: 10–50 BTC</div>
+        <div class="level-bonus">+10% кэшбэк</div>
+      </div>
+      <div class="level-card">
+        <div class="level-name">Золотой</div>
+        <div>Объём: 50–200 BTC</div>
+        <div class="level-bonus">+15% кэшбэк</div>
+      </div>
+      <div class="level-card">
+        <div class="level-name">Платиновый</div>
+        <div>Объём: от 200 BTC</div>
+        <div class="level-bonus">+20% кэшбэк</div>
+      </div>
+    </div>
+
+    <h2>Преимущества участников</h2>
+    <ul>
+      <li>Приоритетная поддержка 24/7</li>
+      <li>Ранний доступ к новым функциям</li>
+      <li>Персональный менеджер (для Gold и выше)</li>
+      <li>Эксклюзивные вебинары и аналитика</li>
+    </ul>
+
+    <a href="./index12.html" class="cta-button">Присоединиться к программе</a>
+
+    <footer>
+      <p>Узнать больше: <a href="mailto:support@yourcrypto.exchange">support@yourcrypto.exchange</a></p>
+      <p><a href="./index23.html">← Вернуться на главную</a></p>
+    </footer>
+  </div>
+</body>
+</html>
